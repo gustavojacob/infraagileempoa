@@ -1,0 +1,10 @@
+---
+- name: configurando um servidor web
+  hosts: "{{maquina}}"
+  vars: 
+   - maquina: default
+  name: criando minha pagina web
+   template: 
+    src: paginaweb.html
+    dest: /var/www/html/paginaweb.html
+

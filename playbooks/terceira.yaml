@@ -1,0 +1,11 @@
+---
+
+- name: minha terceira playbook
+  hosts: all
+  tasks:
+  - name: adicionando usuario gustavo_jacob
+    user:
+      name: gustavo_jacob
+      password: '$1$SoF6lDKv$phGGb8.0GVSMcSOg97fjy.'
+      shell: /bin/bash
+

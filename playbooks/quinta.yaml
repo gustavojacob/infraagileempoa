@@ -1,0 +1,26 @@
+---
+
+- name: instalando servidor web
+  hosts: all
+  tasks: 
+  - name: adicionando usuarios comuns
+    user:
+     name: "{{item}}"
+     password: '$1$SoF6lDKv$phGGb8.0GVSMcSOg97fjy.'
+     shell: /bin/bash
+    with_items:
+     - devops
+     - developer
+     - gustavo_jacob
+  - name: instalando apache2
+    package: 
+     name: apache2
+     state: present
+    when: ansible_os_family == "Debian"
+
+  - name: instalando httpd
+    package:
+     name: httpd
+     state: present
+    when: ansible_os_family == "redhat"
+

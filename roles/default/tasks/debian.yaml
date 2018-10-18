@@ -1,0 +1,11 @@
+---
+
+- nome: pacotes padros para as maquinas Debian
+  package:
+   name:
+    - figlet
+    - cowsay
+    - htop
+    - sysstat
+   update_cache: yes
+   state: present

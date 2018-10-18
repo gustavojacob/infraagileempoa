@@ -1,0 +1,12 @@
+---
+
+- name: configurando usuarios padrao
+  user: 
+   name: "{{item.nome}}"
+   shell: "{{item.bash}}"
+   password: "{{item.senha}}"
+   home: "{{item.home}}"
+  with_items: 
+   - { nome: gustavo, bash: /bin/bash, senha: '$1$MRbYvHlP$8UxhBeVoXjpv/A7NoxPkJ.', home: /srv/gustavo}
+   - { nome: devops, bash: /bin/bash, senha: '$1$MRbYvHlP$8UxhBeVoXjpv/A7NoxPkJ.', home: /srv/devops}
+   - { nome: developer, bash: /bin/bash, senha: '$1$MRbYvHlP$8UxhBeVoXjpv/A7NoxPkJ.', home: /srv/developer}

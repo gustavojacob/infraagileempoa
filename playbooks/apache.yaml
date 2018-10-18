@@ -1,0 +1,20 @@
+---
+- name: configurando um servidor web
+  hosts: "{{maquina}}"
+  vars: 
+   - maquina: default
+  tasks:
+   - name: grantindo o apache instalado
+     package: 
+      name: apache2
+     when: ansible_os_family == "Debian"
+
+   - name: grantindo o apache instalado em Redhat
+     package:
+      name: httpd
+     when: ansible_os_family == "Redhat"
+
+   - name: criando minha pagina web
+     template: 
+      src: index.html
+      dest: /var/www/html/index.html
